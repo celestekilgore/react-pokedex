@@ -1,16 +1,13 @@
+import './Pokecard.css';
 const POKE_API_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
-function Pokecard({ pokemon }) {
-
-  const {name, id, type} = pokemon;
-
-  console.log("pokemon",pokemon);
-
+function Pokecard({name, id, type, base_experience}) {
   return (
-    <div>
-      <h3>{name}</h3>
+    <div className="pokecard">
+      <h3 className="title">{name}</h3>
       <img src={`${POKE_API_URL}${id}.png`}/>
-      <p>{type}</p>
+      <p>Type: {type}</p>
+      <p>EXP: {base_experience}</p>
     </div>
   );
 
